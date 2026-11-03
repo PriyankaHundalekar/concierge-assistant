@@ -1,0 +1,40 @@
+[
+  {
+    "id": "q01",
+    "question": "What is the return window?",
+    "expected_doc_ids": [
+      "refund_policy.txt"
+    ],
+    "category": "standard"
+  },
+  {
+    "id": "q02",
+    "question": "How long does standard shipping take?",
+    "expected_doc_ids": [
+      "shipping_policy.txt"
+    ],
+    "category": "standard"
+  },
+  {
+    "id": "q03",
+    "question": "Is return shipping free?",
+    "expected_doc_ids": [
+      "refund_policy.txt"
+    ],
+    "category": "standard"
+  },
+  {
+    "id": "q04",
+    "question": "What is the free shipping threshold?",
+    "expected_doc_ids": [
+      "shipping_policy.txt"
+    ],
+    "category": "standard"
+  },
+  {
+    "id": "q05",
+    "question": "Do you book flight tickets?",
+    "expected_doc_ids": [],
+    "category": "out_of_bounds"
+  }
+]
