@@ -33,7 +33,43 @@ concierge-assistant/
     ├── eval_adversarial.py       # Robustness testing suite (Prompt injection, OOB queries)
     └── eval_retrieval.py         # Retrieval evaluation benchmark script (Hit Rate & MRR)
 
+## Architecture Diagram
+
++----------------------------------------------------------------+
+               |        User Input Prompt         |
+               +----------------------------------+
+                                |
+                                v
+               +----------------------------------+
+               |    Human Hand-Off Guardrails     |
+               |       (src/guardrails.py)        |
+               +----------------------------------+
+                     /                      \
+        [Trigger Detected]               [Passed Check]
+                   /                          \
+                  v                            v
+  +--------------------------------+   +--------------------------------+
+  |  Human Support Escalation Queue |   |      RegEx Tool Classifier     |
+  +--------------------------------+   |         (src/tools.py)         |
+                                       +--------------------------------+
+                                             /                    \
+                                  [Matches ORD-XXXX]        [Policy Query]
+                                           /                        \
+                                          v                          v
+                        +-------------------+       +-------------------+
+                        | Mock Order DB API |       | Local ChromaDB    |
+                        |   (src/tools.py)  |       | Vector Search     |
+                        +-------------------+       | (src/retriever.py)|
+                                  |                 +-------------------+
+                                  \                           /
+                                   v                         v
+                              +-----------------------------------+
+                              |   Source-Grounded Response Engine  |
+                              |         (src/generator.py)        |
+                              +-----------------------------------+
+
 ```
+
 ## 🛠️ Technology Stack
 
 - Language: Python
