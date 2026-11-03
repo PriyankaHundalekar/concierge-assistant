@@ -4,6 +4,8 @@ Project Concierge is a modular, source-grounded Retrieval-Augmented Generation (
 
 ---
 
+![alt text](<Project Concierge Support Flow-1.png>)
+
 ## 📂 Project Directory Structure
 
 ```text
